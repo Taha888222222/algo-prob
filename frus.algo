@@ -1,0 +1,25 @@
+VAR
+    arr: array of integers
+    n, i, j, current_element: integers
+
+BEGIN
+
+    READ n
+    FOR i FROM 1 TO n DO
+    READ arr[i]
+    END FOR
+
+    FOR i FROM 2 TO n DO
+    current_element ← arr[i]
+    j ← i - 1
+    WHILE j >= 0 AND current_element < arr[j] DO
+    arr[j + 1] ← arr[j]
+    j ← j - 1
+    END WHILE
+    arr[j + 1] ← current_element
+    END FOR
+
+    FOR i FROM 1 TO n DO
+    WRITE arr[i]
+    END FOR
+END
