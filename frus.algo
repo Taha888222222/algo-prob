@@ -23,3 +23,21 @@ BEGIN
     WRITE arr[i]
     END FOR
 END
+
+
+
+
+PROCEDURE insertion_sort (VAR arr : ARRAY_of INTEGER)
+VAR
+    i,j,courrent : INTEGER ;
+BEGIN
+    FOR i FROM 1 TO arr.lenght-1 DO
+        current := arr[i];
+        j := j-1;
+        WHILE ( j > 0 AND arr[j]> current) DO
+        arr[j+1] :=arr[j];
+        j := j-1;
+        END_WHILE
+        arr[j+1] = current;
+        END_FOR 
+END
